@@ -43,8 +43,9 @@ The original collection comprises of 239 properties, with missing values present
 Therefore, we aggressively discard incomplete rows, such that, there are more than 100 properties left with at least 30 properties in each suburb left.
 Having removed the incomplete rows, \texttt{area\_sqm} is the only single source of missingness, so it
 alone was exempted. Its remaining 64 gaps (34\%) are imputed inside the modelling pipeline.
-Fortunately, three of those six columns are not model inputs, and it cost 27 Mosman sales, contributing to the sparse Mosman tail in the price distribution. Cross-validating
-all three models on both the full and filtered sets confirms it is nonetheless the better choice, rather than keeping the missing values and conduct imputation in the modelling pipeline.
+Admittedly, three of those six columns are not model inputs, and it cost 27 Mosman sales, contributing to the sparse Mosman tail in the price distribution. Cross-validating
+all three models on both the full and filtered sets confirms it is nonetheless the better choice, rather than keeping the missing values and imputing them
+in the modelling pipeline (notebook, \emph{Keeping versus dropping incomplete rows}).
 
 Noticeably, there are three apparent limitations. First, sales span only March--August 2026 with uneven coverage, so
 the temporal term cannot be extrapolated. Second, \texttt{area\_sqm} remains $34\%$ missing, so that column depends on imputation.

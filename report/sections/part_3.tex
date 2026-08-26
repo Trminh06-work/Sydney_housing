@@ -35,7 +35,7 @@ units; MAPE back-transformed to AUD). All three share identical folds.}
 \end{table}
 
 From the table, no model underfits (all achieve $R^2_{cv} \geq 0.89$). Indeed, they do not overfit badly, since all gap are insignificant, at most 0.038 in \texttt{Random Forest}.
-Looking at the learning curves, it progressively falls when the fit size increases, which is indicative of allowing more traning samples may improve models' performance.
+Looking at the learning curves, it progressively falls when the fit size increases, which indicates that more training samples may improve performance.
 
 \begin{figure}[H]
 \centering
@@ -56,7 +56,7 @@ fit size (roughly 105 rows: four fifths of the 131 training rows) for all three 
 \texttt{AdaBoost} & 0.330  \\
 \bottomrule
 \end{tabular}
-\caption{Pearson $\tau$ correlation between models' absolute residual errors and price target.}
+\caption{Pearson $r$ correlation between each model's absolute log residual and the actual price.}
 \label{tab:residuals_analysis}
 \end{table}
 
