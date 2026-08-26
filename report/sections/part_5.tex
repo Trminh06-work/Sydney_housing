@@ -1,0 +1,64 @@
+\subsection{The application}
+
+The deployed model is the Ridge pipeline refit on all 188 sales. The split existed to
+obtain an unbiased error estimate, and once that is recorded there is no reason to
+discard 30\% of the evidence. It is serialised to \texttt{src/model.joblib} with its column lists, so
+the app builds feature rows from the definitions used in training.
+
+\texttt{src/app.py} is a Streamlit prototype loading that bundle, offering a
+single-property form and a CSV upload. Inputs are only fields readable off a listing,
+including floor or land area, which can be left blank. Derived terms are
+computed internally. The app exponentiates before display and reports
+a $\pm 20\%$ band rather than a point estimate.
+
+\begin{verbatim}
+pip install -r requirements.txt
+jupyter nbconvert --to notebook --execute --inplace notebooks/lab.ipynb
+streamlit run src/app.py        # from the project root; serves localhost:8501
+\end{verbatim}
+
+The notebook must run first, since it writes \texttt{src/model.joblib}. Full instructions,
+including rebuilding the dataset from the cached raw pages, are in \texttt{README.md}.
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}{0.49\textwidth}\includegraphics[width=\linewidth]{figures/p5_app_single.png}
+\caption{Single-property estimate.}\end{subfigure}\hfill
+\begin{subfigure}{0.49\textwidth}\includegraphics[width=\linewidth]{figures/p5_app_csv.png}
+\caption{Batch estimates from an uploaded CSV.}\end{subfigure}
+\caption{The Streamlit application. Estimates are shown with a $\pm 20\%$ band, and
+warnings fire on the cases Section~4 identified as unreliable.}
+\label{fig:app}
+\end{figure}
+
+
+\subsection{Reflection}
+
+\textbf{Data collection was the binding constraint, not modelling.} 188 of 239 listings
+survived the completeness rule, and every later limitation traces to that number. The
+learning curves never flattened, so more sales beat a better estimator. Which rows to
+drop was itself a modelling decision: exempting \texttt{area\_sqm} from the completeness
+rule preserved the suburb balance, at the cost of imputing it for a third of the sample.
+
+\textbf{Evaluation choices changed conclusions.} Scoring in-sample rather than
+out-of-fold reversed the ranking; MAPE on the logged target read 1.15\% instead of
+16.4\%. Neither raises an error, and both would have been reported as findings. The
+target transform also mattered more than the algorithm, since logging moved Ridge from
+last to first.
+
+\textbf{Accuracy against deployability.} The most direct signals were hardest to serve.
+\texttt{area\_sqm} is a third missing, so the application must accept a blank and fall
+back on the training median, and the \texttt{kw\_*} flags proved near-null. The
+deployed model asks only for fields readable off a listing in seconds, accepting
+$\pm 25\%$ error for an interface needing no preparation.
+
+\textbf{Bias and fairness.} Three suburbs are not Sydney, and coverage within them is
+uneven, at 79 Blacktown sales against 47 Mosman, with error following at 11.7\% against
+25.6\% in Chatswood. Since suburb is an explicit input and SEIFA proved to be suburb
+restated, the model encodes existing spatial inequality and would reproduce it in any
+decision it informed.
+
+\textbf{Given more resources.} A longer window would separate seasonality from trend and
+fill the sparse Mosman tail; capturing \texttt{area\_sqm} at collection would remove the
+need to impute a third of it; nested cross-validation would remove the optimism left in
+the CV figures.

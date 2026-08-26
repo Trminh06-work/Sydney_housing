@@ -1,0 +1,71 @@
+\subsection{The five largest errors}
+
+Failures are ranked on $\log(\text{actual}/\text{predicted})$, not dollars:
+$|\text{dollar error}|$ largely restates price, whereas the log residual is scale-free
+and finds where the model is genuinely confused.
+
+\begin{table}[H]
+\centering\small
+\begin{tabular}{@{}l l c c r r r@{}}
+\toprule
+\textbf{Suburb} & \textbf{Type} & \textbf{Bed} & \textbf{Bath} & \textbf{Actual} & \textbf{Predicted} & \textbf{Err (\%)} \\
+\midrule
+Mosman    & Apartment & 1 & 1 & \$1{,}570{,}000 & \$845{,}911     & $+46.1$ \\
+Chatswood & Apartment & 3 & 3 & \$1{,}385{,}888 & \$2{,}365{,}823 & $-70.7$ \\
+Chatswood & Apartment & 2 & 2 & \$2{,}150{,}000 & \$1{,}300{,}159 & $+39.5$ \\
+Blacktown & House     & 3 & 2 & \$1{,}000{,}000 & \$1{,}516{,}701 & $-51.7$ \\
+Chatswood & Apartment & 1 & 1 & \$1{,}030{,}000 & \$703{,}932     & $+31.7$ \\
+\bottomrule
+\end{tabular}
+\caption{The five largest prediction errors on the held-out test set (Ridge).}
+\label{tab:worst}
+\end{table}
+
+Four of five are apartments, three sharing room counts with far cheaper units elsewhere.
+The worst case, a one-bedroom Mosman apartment at \$1.57M against \$846k predicted, is
+the clearest. In particular, room counts barely separate a 1-bed/1-bath unit from any other, and
+where \texttt{area\_sqm} is missing it is replaced by the sample median, so the outlook
+justifying its price is invisible to the model.
+Five isolated cases could be outliers; whether they are is settled by asking if the same
+errors recur across a group.
+
+\begin{table}[H]
+\centering\small
+\begin{tabular}{@{}l l r r r@{}}
+\toprule
+\textbf{Cut} & \textbf{Segment} & \textbf{$n$} & \textbf{Mean $|$err$|$ (\%)} & \textbf{Signed bias (\%)} \\
+\midrule
+Suburb        & Blacktown & 29 & 11.7 & $-4.9$ \\
+              & Chatswood & 16 & 25.6 & $-6.2$ \\
+              & Mosman    & 12 & 20.9 & $-0.5$ \\
+\addlinespace
+Property type & Apartment & 30 & 21.9 & $-4.3$ \\
+              & House     & 21 & 12.9 & $-6.0$ \\
+\addlinespace
+Price tercile & Low       & 19 & 13.7 & $-10.8$ \\
+              & Mid       & 19 & 17.2 & $-4.1$ \\
+              & High      & 19 & 21.7 & $+1.9$ \\
+\bottomrule
+\end{tabular}
+\caption{Test-set error by segment. Negative bias indicates over-prediction. Minor
+property types (townhouse, villa and retirement living; 6 sales combined) are omitted.}
+\label{tab:seg}
+\end{table}
+
+Chatswood averages 25.6\% against Blacktown's 11.7\% despite mid-range prices,
+so this is not merely a tail problem. Apartments average 21.9\% against 12.9\% for
+houses. Signed bias flips from $-10.8\%$ in the low tercile to $+1.9\%$ in the high. In conclusion, the
+model over-prices cheap homes and under-prices dear ones, regressing toward the mean and
+disadvantaging owners of unusual properties.
+
+\subsection{Limitations and when to distrust an estimate}
+
+Units are inherently harder to model \emph{with these features}. Houses separate
+tolerably by room counts, whereas two apartments identical in bedrooms, bathrooms and
+parking can differ several-fold on floor level, aspect and outlook, none of which is
+recorded here. What would most improve performance is missing measurement, not a better
+algorithm.
+
+Remarkably, estimates for one-bedroom units are least reliable, estimates at
+either price extreme are biased toward the middle, and any estimate outside
+March--August 2026 extrapolates the temporal term with no evidence.

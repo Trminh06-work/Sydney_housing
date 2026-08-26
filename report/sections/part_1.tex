@@ -1,0 +1,55 @@
+\subsection{Problem definition and suburb selection}
+
+An agency needs a tool estimating sale price from observable characteristics:
+supervised regression, predicting $y \in \mathbb{R}^{+}$ from features $\mathbf{x}$.
+The framing is hedonic \cite{rosen1974hedonic,malpezzi2003hedonic}. Accuracy alone is
+insufficient, because the agency also needs to know when to distrust a prediction,
+which motivates Section~4.
+
+Three suburbs were chosen to span deliberately different markets, so location would be
+a first-order predictor. They differ in level, spread and stock (Table~\ref{tab:suburbs}), i.e. Blacktown house-dominant and affordable, Chatswood
+unit-dominant, Mosman mixed and premium. Suburb and type are entangled by construction,
+so both are retained as inputs.
+
+\begin{table}[H]
+\centering\small
+\begin{tabularx}{\textwidth}{@{}l XXX@{}}
+\toprule
+ & \textbf{Blacktown} & \textbf{Chatswood} & \textbf{Mosman} \\
+\midrule
+Retained sales $n$   & 79 & 62 & 47 \\
+Median price         & \$950{,}000 & \$1{,}417{,}500 & \$1{,}760{,}000 \\
+Mean price           & \$901{,}570 & \$1{,}716{,}668 & \$2{,}737{,}883 \\
+Std.\ deviation      & \$334{,}345 & \$970{,}869 & \$2{,}116{,}702 \\
+Range                & \$0.41--1.88M & \$0.70--4.80M & \$0.70--8.70M \\
+Houses / Apartments  & 47 / 25 & 13 / 48 & 11 / 28 \\
+Other stock          & 6 Twn, 1 Vil & 1 Twn & 4 Twn, 2 Ret, 2 Semi \\
+\bottomrule
+\end{tabularx}
+\caption{Suburb contrast, computed in the notebook from the retained sample
+($n=188$). Twn = townhouse, Ret = retirement living, Semi = semi-detached.}
+\label{tab:suburbs}
+\end{table}
+
+\subsection{Collection, quality and limitations}
+
+Records came from public \texttt{domain.com.au} sold listings \cite{domain2026sold},
+with context from Domain profiles \cite{domain2026suburb} and ABS SEIFA
+\cite{abs2021seifa}. realestate.com.au was excluded, as it denied programmatic access and
+REA Group has an enforcement record \cite{om2024rea}. Every row carries
+\texttt{source\_url} and \texttt{retrieved\_at} for verification purpose.
+
+The original collection comprises of 239 properties, with missing values present in different columns.
+Therefore, we aggressively discard incomplete rows, such that, there are more than 100 properties left with at least 30 properties in each suburb left.
+Having removed the incomplete rows, \texttt{area\_sqm} is the only single source of missingness, so it
+alone was exempted. Its remaining 64 gaps (34\%) are imputed inside the modelling pipeline.
+Fortunately, three of those six columns are not model inputs, and it cost 27 Mosman sales, contributing to the sparse Mosman tail in the price distribution. Cross-validating
+all three models on both the full and filtered sets confirms it is nonetheless the better choice, rather than keeping the missing values and conduct imputation in the modelling pipeline.
+
+Noticeably, there are three apparent limitations. First, sales span only March--August 2026 with uneven coverage, so
+the temporal term cannot be extrapolated. Second, \texttt{area\_sqm} remains $34\%$ missing, so that column depends on imputation.
+Third, the SEIFA and \texttt{suburb\_*} columns resolve to three distinct rows, restating the suburb label rather than adding property-level information.
+
+We also identify a potential source of bias is selection on price disclosure. Collection filtered to
+listings showing a price, so withheld-price sales are absent by construction, and withholding is not random. The sample therefore under-represents the top of each distribution, most acutely in Mosman.
+Recovering those sales requires the NSW Valuer General's statutory register \cite{vgnsw2026psi}, which records every transfer regardless of advertised disclosure.

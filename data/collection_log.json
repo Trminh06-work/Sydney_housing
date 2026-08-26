@@ -1,0 +1,482 @@
+{
+ "retrieved_at": "2026-08-18T06:00:00Z",
+ "source_site": "domain.com.au",
+ "index_pages": [
+  {
+   "file": "index_blacktown_p1.txt",
+   "records": 19
+  },
+  {
+   "file": "index_blacktown_p2.txt",
+   "records": 19
+  },
+  {
+   "file": "index_blacktown_p3.txt",
+   "records": 20
+  },
+  {
+   "file": "index_blacktown_p4.txt",
+   "records": 18
+  },
+  {
+   "file": "index_blacktown_p5.txt",
+   "records": 18
+  },
+  {
+   "file": "index_blacktown_p6.txt",
+   "records": 20
+  },
+  {
+   "file": "index_chatswood_p1.txt",
+   "records": 15
+  },
+  {
+   "file": "index_chatswood_p2.txt",
+   "records": 19
+  },
+  {
+   "file": "index_chatswood_p3.txt",
+   "records": 20
+  },
+  {
+   "file": "index_chatswood_p4.txt",
+   "records": 15
+  },
+  {
+   "file": "index_chatswood_p5.txt",
+   "records": 19
+  },
+  {
+   "file": "index_chatswood_p6.txt",
+   "records": 19
+  },
+  {
+   "file": "index_mosman_p1.txt",
+   "records": 19
+  },
+  {
+   "file": "index_mosman_p2.txt",
+   "records": 19
+  },
+  {
+   "file": "index_mosman_p3.txt",
+   "records": 18
+  },
+  {
+   "file": "index_mosman_p4.txt",
+   "records": 18
+  },
+  {
+   "file": "index_mosman_p5.txt",
+   "records": 18
+  },
+  {
+   "file": "index_mosman_p6.txt",
+   "records": 17
+  }
+ ],
+ "rejected": [
+  {
+   "file": "data/raw/index_blacktown_p2.txt",
+   "reason": "project_ad_no_street_number",
+   "value": "Blacktown"
+  },
+  {
+   "file": "data/raw/index_blacktown_p5.txt",
+   "reason": "whole_building_not_a_dwelling",
+   "value": "14 Boyd Street, Blacktown"
+  },
+  {
+   "file": "data/raw/index_chatswood_p1.txt",
+   "reason": "project_ad_no_street_number",
+   "value": "Chatswood"
+  },
+  {
+   "file": "data/raw/index_chatswood_p1.txt",
+   "reason": "malformed_index_row",
+   "value": "https://www.domain.com.au/8-claude-street-chatswood-nsw-2067-2020865473|8 Claude"
+  },
+  {
+   "reason": "no_listing_page_retrieved",
+   "value": "https://www.domain.com.au/3-andre-place-blacktown-nsw-2148-2020642327"
+  },
+  {
+   "reason": "no_listing_page_retrieved",
+   "value": "https://www.domain.com.au/6-8-10-lancaster-street-blacktown-nsw-2148-2020854950"
+  },
+  {
+   "reason": "no_listing_page_retrieved",
+   "value": "https://www.domain.com.au/1202-5-second-ave-blacktown-nsw-2148-2020960324"
+  },
+  {
+   "reason": "no_listing_page_retrieved",
+   "value": "https://www.domain.com.au/69-walters-road-blacktown-nsw-2148-2020687408"
+  },
+  {
+   "reason": "no_listing_page_retrieved",
+   "value": "https://www.domain.com.au/18-twilight-crescent-blacktown-nsw-2148-2020717008"
+  },
+  {
+   "reason": "no_listing_page_retrieved",
+   "value": "https://www.domain.com.au/8-iona-street-blacktown-nsw-2148-2020836737"
+  },
+  {
+   "reason": "no_listing_page_retrieved",
+   "value": "https://www.domain.com.au/17-173a-reservoir-road-blacktown-nsw-2148-2020710505"
+  },
+  {
+   "reason": "no_listing_page_retrieved",
+   "value": "https://www.domain.com.au/1-24-norfolk-street-blacktown-nsw-2148-2020789530"
+  },
+  {
+   "reason": "no_listing_page_retrieved",
+   "value": "https://www.domain.com.au/23-10-wallace-street-blacktown-nsw-2148-2020846959"
+  },
+  {
+   "reason": "no_listing_page_retrieved",
+   "value": "https://www.domain.com.au/32-hilltop-avenue-blacktown-nsw-2148-2020739265"
+  },
+  {
+   "reason": "no_listing_page_retrieved",
+   "value": "https://www.domain.com.au/22-28-peter-street-blacktown-nsw-2148-2020665780"
+  },
+  {
+   "reason": "no_listing_page_retrieved",
+   "value": "https://www.domain.com.au/29-30-32-fifth-avenue-blacktown-nsw-2148-2020752862"
+  },
+  {
+   "reason": "no_listing_page_retrieved",
+   "value": "https://www.domain.com.au/70-lock-street-blacktown-nsw-2148-2020671604"
+  },
+  {
+   "reason": "no_listing_page_retrieved",
+   "value": "https://www.domain.com.au/39-41-patricia-street-blacktown-nsw-2148-2020811356"
+  },
+  {
+   "reason": "no_listing_page_retrieved",
+   "value": "https://www.domain.com.au/26-19-third-avenue-blacktown-nsw-2148-2020770456"
+  },
+  {
+   "reason": "no_listing_page_retrieved",
+   "value": "https://www.domain.com.au/24-kurrajong-crescent-blacktown-nsw-2148-2020561398"
+  },
+  {
+   "reason": "no_listing_page_retrieved",
+   "value": "https://www.domain.com.au/96-greenbank-drive-blacktown-nsw-2148-2020630570"
+  },
+  {
+   "reason": "no_listing_page_retrieved",
+   "value": "https://www.domain.com.au/84-peter-street-blacktown-nsw-2148-2020671487"
+  },
+  {
+   "reason": "no_listing_page_retrieved",
+   "value": "https://www.domain.com.au/3305-1-post-office-lane-chatswood-nsw-2067-2020685360"
+  },
+  {
+   "reason": "no_listing_page_retrieved",
+   "value": "https://www.domain.com.au/7-neridah-street-chatswood-nsw-2067-2020636088"
+  },
+  {
+   "reason": "no_listing_page_retrieved",
+   "value": "https://www.domain.com.au/1-fairyland-avenue-chatswood-nsw-2067-2020644407"
+  },
+  {
+   "reason": "no_listing_page_retrieved",
+   "value": "https://www.domain.com.au/28-saywell-street-chatswood-nsw-2067-2020637843"
+  },
+  {
+   "reason": "no_listing_page_retrieved",
+   "value": "https://www.domain.com.au/194-1-katherine-street-chatswood-nsw-2067-2020578226"
+  },
+  {
+   "reason": "no_listing_page_retrieved",
+   "value": "https://www.domain.com.au/18-fullers-road-chatswood-nsw-2067-2020339609"
+  },
+  {
+   "reason": "no_listing_page_retrieved",
+   "value": "https://www.domain.com.au/24-34-archer-street-chatswood-nsw-2067-2020647574"
+  },
+  {
+   "reason": "no_listing_page_retrieved",
+   "value": "https://www.domain.com.au/52-7-13-ellis-street-chatswood-nsw-2067-2020650126"
+  },
+  {
+   "reason": "no_listing_page_retrieved",
+   "value": "https://www.domain.com.au/33-robinson-street-chatswood-nsw-2067-2020636892"
+  },
+  {
+   "reason": "no_listing_page_retrieved",
+   "value": "https://www.domain.com.au/2-the-crescent-chatswood-nsw-2067-2020474121"
+  },
+  {
+   "reason": "no_listing_page_retrieved",
+   "value": "https://www.domain.com.au/902-30-anderson-street-chatswood-nsw-2067-2020597535"
+  },
+  {
+   "reason": "no_listing_page_retrieved",
+   "value": "https://www.domain.com.au/112-greville-street-chatswood-nsw-2067-2020562017"
+  },
+  {
+   "reason": "no_listing_page_retrieved",
+   "value": "https://www.domain.com.au/1807-2a-help-street-chatswood-nsw-2067-2020471464"
+  },
+  {
+   "reason": "no_listing_page_retrieved",
+   "value": "https://www.domain.com.au/8a-wood-street-chatswood-nsw-2067-2020504830"
+  },
+  {
+   "reason": "no_listing_page_retrieved",
+   "value": "https://www.domain.com.au/811-2a-help-street-chatswood-nsw-2067-2020623202"
+  },
+  {
+   "reason": "no_listing_page_retrieved",
+   "value": "https://www.domain.com.au/10-beresford-avenue-chatswood-nsw-2067-2020583000"
+  },
+  {
+   "reason": "no_listing_page_retrieved",
+   "value": "https://www.domain.com.au/9a-alleyne-street-chatswood-nsw-2067-2020555805"
+  },
+  {
+   "reason": "no_listing_page_retrieved",
+   "value": "https://www.domain.com.au/43-beaconsfield-road-chatswood-nsw-2067-2020581912"
+  },
+  {
+   "reason": "no_listing_page_retrieved",
+   "value": "https://www.domain.com.au/12-beresford-avenue-chatswood-nsw-2067-2020575275"
+  },
+  {
+   "reason": "no_listing_page_retrieved",
+   "value": "https://www.domain.com.au/11-381-mowbray-road-rear-of-block-chatswood-nsw-2067-2020558236"
+  },
+  {
+   "reason": "no_listing_page_retrieved",
+   "value": "https://www.domain.com.au/14-75-stanley-street-chatswood-nsw-2067-2020600771"
+  },
+  {
+   "reason": "no_listing_page_retrieved",
+   "value": "https://www.domain.com.au/42-hawthorne-avenue-chatswood-nsw-2067-2020619210"
+  },
+  {
+   "reason": "no_listing_page_retrieved",
+   "value": "https://www.domain.com.au/28-8-eddy-road-chatswood-nsw-2067-2020613907"
+  },
+  {
+   "reason": "no_listing_page_retrieved",
+   "value": "https://www.domain.com.au/30-hercules-street-chatswood-nsw-2067-2020566453"
+  },
+  {
+   "reason": "no_listing_page_retrieved",
+   "value": "https://www.domain.com.au/14-882-pacific-highway-chatswood-nsw-2067-2020561511"
+  },
+  {
+   "reason": "no_listing_page_retrieved",
+   "value": "https://www.domain.com.au/2902-2a-help-street-chatswood-nsw-2067-2020599811"
+  },
+  {
+   "reason": "no_listing_page_retrieved",
+   "value": "https://www.domain.com.au/5102-7-railway-street-chatswood-nsw-2067-2020626672"
+  },
+  {
+   "reason": "no_listing_page_retrieved",
+   "value": "https://www.domain.com.au/206-30-anderson-street-chatswood-nsw-2067-2020230691"
+  },
+  {
+   "reason": "no_listing_page_retrieved",
+   "value": "https://www.domain.com.au/75-dalrymple-avenue-chatswood-nsw-2067-2020600053"
+  },
+  {
+   "reason": "no_listing_page_retrieved",
+   "value": "https://www.domain.com.au/15-royal-street-chatswood-nsw-2067-2019456271"
+  },
+  {
+   "reason": "no_listing_page_retrieved",
+   "value": "https://www.domain.com.au/26-saywell-street-chatswood-nsw-2067-2020384724"
+  },
+  {
+   "reason": "no_listing_page_retrieved",
+   "value": "https://www.domain.com.au/30-1-day-street-chatswood-nsw-2067-2020511467"
+  },
+  {
+   "reason": "no_listing_page_retrieved",
+   "value": "https://www.domain.com.au/101-13-oscar-street-chatswood-nsw-2067-2020636179"
+  },
+  {
+   "reason": "no_listing_page_retrieved",
+   "value": "https://www.domain.com.au/26-17-septimus-street-chatswood-nsw-2067-2020529415"
+  },
+  {
+   "reason": "no_listing_page_retrieved",
+   "value": "https://www.domain.com.au/10-hawthorne-avenue-chatswood-nsw-2067-2020396551"
+  },
+  {
+   "reason": "no_listing_page_retrieved",
+   "value": "https://www.domain.com.au/29-7-freeman-road-chatswood-nsw-2067-2020718172"
+  },
+  {
+   "reason": "no_listing_page_retrieved",
+   "value": "https://www.domain.com.au/28-5-7-sutherland-road-chatswood-nsw-2067-2020618103"
+  },
+  {
+   "reason": "no_listing_page_retrieved",
+   "value": "https://www.domain.com.au/4-sharland-avenue-chatswood-nsw-2067-2020507749"
+  },
+  {
+   "reason": "no_listing_page_retrieved",
+   "value": "https://www.domain.com.au/6-16-bardwell-road-mosman-nsw-2088-2020717451"
+  },
+  {
+   "reason": "no_listing_page_retrieved",
+   "value": "https://www.domain.com.au/161-avenue-road-mosman-nsw-2088-2020621624"
+  },
+  {
+   "reason": "no_listing_page_retrieved",
+   "value": "https://www.domain.com.au/8a-bickell-road-mosman-nsw-2088-2020578973"
+  },
+  {
+   "reason": "no_listing_page_retrieved",
+   "value": "https://www.domain.com.au/3-701-military-road-mosman-nsw-2088-2020310264"
+  },
+  {
+   "reason": "no_listing_page_retrieved",
+   "value": "https://www.domain.com.au/35-22-mosman-street-mosman-nsw-2088-2020756718"
+  },
+  {
+   "reason": "no_listing_page_retrieved",
+   "value": "https://www.domain.com.au/5-28-rickard-avenue-mosman-nsw-2088-2020632617"
+  },
+  {
+   "reason": "no_listing_page_retrieved",
+   "value": "https://www.domain.com.au/19-bray-street-mosman-nsw-2088-2020640390"
+  },
+  {
+   "reason": "no_listing_page_retrieved",
+   "value": "https://www.domain.com.au/18-174-spit-road-mosman-nsw-2088-2020598801"
+  },
+  {
+   "reason": "no_listing_page_retrieved",
+   "value": "https://www.domain.com.au/130-cowles-road-mosman-nsw-2088-2020677840"
+  },
+  {
+   "reason": "no_listing_page_retrieved",
+   "value": "https://www.domain.com.au/14-erith-street-mosman-nsw-2088-2020677703"
+  },
+  {
+   "reason": "no_listing_page_retrieved",
+   "value": "https://www.domain.com.au/3-102-spit-road-mosman-nsw-2088-2020756238"
+  },
+  {
+   "reason": "no_listing_page_retrieved",
+   "value": "https://www.domain.com.au/19-5-parriwi-road-mosman-nsw-2088-2020749662"
+  },
+  {
+   "reason": "no_listing_page_retrieved",
+   "value": "https://www.domain.com.au/3-3-millett-road-mosman-nsw-2088-2020709441"
+  },
+  {
+   "reason": "no_listing_page_retrieved",
+   "value": "https://www.domain.com.au/312-88-vista-street-mosman-nsw-2088-2020641500"
+  },
+  {
+   "reason": "no_listing_page_retrieved",
+   "value": "https://www.domain.com.au/3-34-upper-fairfax-road-mosman-nsw-2088-2020659131"
+  },
+  {
+   "reason": "no_listing_page_retrieved",
+   "value": "https://www.domain.com.au/2-8-10-bardwell-road-mosman-nsw-2088-2020622004"
+  },
+  {
+   "reason": "no_listing_page_retrieved",
+   "value": "https://www.domain.com.au/28-182-raglan-street-mosman-nsw-2088-2020711599"
+  },
+  {
+   "reason": "no_listing_page_retrieved",
+   "value": "https://www.domain.com.au/4-36-40-muston-street-mosman-nsw-2088-2020639095"
+  },
+  {
+   "reason": "no_listing_page_retrieved",
+   "value": "https://www.domain.com.au/22-40-raglan-street-mosman-nsw-2088-2020561679"
+  },
+  {
+   "reason": "no_listing_page_retrieved",
+   "value": "https://www.domain.com.au/12-68-bradleys-head-road-mosman-nsw-2088-2020694447"
+  },
+  {
+   "reason": "no_listing_page_retrieved",
+   "value": "https://www.domain.com.au/19-180-raglan-street-mosman-nsw-2088-2020699414"
+  },
+  {
+   "reason": "no_listing_page_retrieved",
+   "value": "https://www.domain.com.au/38-bond-street-mosman-nsw-2088-2020677179"
+  },
+  {
+   "reason": "no_listing_page_retrieved",
+   "value": "https://www.domain.com.au/3-1-hampden-street-mosman-nsw-2088-2020676088"
+  },
+  {
+   "reason": "no_listing_page_retrieved",
+   "value": "https://www.domain.com.au/8-4-mandolong-road-mosman-nsw-2088-2020676984"
+  },
+  {
+   "reason": "no_listing_page_retrieved",
+   "value": "https://www.domain.com.au/44-musgrave-street-mosman-nsw-2088-2020348348"
+  },
+  {
+   "reason": "no_listing_page_retrieved",
+   "value": "https://www.domain.com.au/2-1c-avenue-road-mosman-nsw-2088-2020640430"
+  },
+  {
+   "reason": "no_listing_page_retrieved",
+   "value": "https://www.domain.com.au/17-morella-road-mosman-nsw-2088-2020327912"
+  },
+  {
+   "reason": "no_listing_page_retrieved",
+   "value": "https://www.domain.com.au/27-bardwell-road-mosman-nsw-2088-2020640428"
+  },
+  {
+   "reason": "no_listing_page_retrieved",
+   "value": "https://www.domain.com.au/3-60c-raglan-street-mosman-nsw-2088-2020720333"
+  },
+  {
+   "reason": "no_listing_page_retrieved",
+   "value": "https://www.domain.com.au/2-732-military-road-mosman-nsw-2088-2020517777"
+  },
+  {
+   "reason": "no_listing_page_retrieved",
+   "value": "https://www.domain.com.au/8-238-raglan-street-mosman-nsw-2088-2020582849"
+  },
+  {
+   "reason": "no_listing_page_retrieved",
+   "value": "https://www.domain.com.au/1-21-mcleod-street-mosman-nsw-2088-2020380224"
+  },
+  {
+   "reason": "no_listing_page_retrieved",
+   "value": "https://www.domain.com.au/14-illawarra-street-mosman-nsw-2088-2020627101"
+  },
+  {
+   "reason": "no_listing_page_retrieved",
+   "value": "https://www.domain.com.au/34-rickard-avenue-mosman-nsw-2088-2020560082"
+  },
+  {
+   "reason": "no_listing_page_retrieved",
+   "value": "https://www.domain.com.au/8-32-muston-street-mosman-nsw-2088-2020660114"
+  }
+ ],
+ "counts": {
+  "index_records_parsed": 330,
+  "after_dedupe": 330,
+  "detail_records_loaded": 239,
+  "detail_matched_to_index": 239,
+  "final_rows": 239,
+  "by_suburb": {
+   "Blacktown": 96,
+   "Chatswood": 69,
+   "Mosman": 74
+  },
+  "dropped_price_withheld_or_absent": {
+   "Blacktown": 0,
+   "Chatswood": 0,
+   "Mosman": 0
+  },
+  "rejected_total": 95
+ }
+}

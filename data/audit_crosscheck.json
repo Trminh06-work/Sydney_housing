@@ -1,0 +1,45 @@
+{
+ "bedrooms": {
+  "comparable": 179,
+  "agree": 179,
+  "agreement_pct": 100.0,
+  "disagreements": []
+ },
+ "bathrooms": {
+  "comparable": 180,
+  "agree": 180,
+  "agreement_pct": 100.0,
+  "disagreements": []
+ },
+ "parking": {
+  "comparable": 168,
+  "agree": 168,
+  "agreement_pct": 100.0,
+  "disagreements": []
+ },
+ "property_type": {
+  "comparable": 180,
+  "agree": 178,
+  "agreement_pct": 98.9,
+  "disagreements": [
+   {
+    "address": "142/15 Hale Road, Mosman",
+    "index": "Retirement living",
+    "listing": "House",
+    "url": "https://www.domain.com.au/142-15-hale-road-mosman-nsw-2088-2020838855"
+   },
+   {
+    "address": "13/17-23 Heydon Street, Mosman",
+    "index": "Retirement living",
+    "listing": "Apartment",
+    "url": "https://www.domain.com.au/13-17-23-heydon-street-mosman-nsw-2088-2020664432"
+   }
+  ]
+ },
+ "price_aud": {
+  "comparable": 149,
+  "agree": 149,
+  "agreement_pct": 100.0,
+  "disagreements": []
+ }
+}

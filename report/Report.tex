@@ -1,0 +1,117 @@
+%=========================================================
+% Mathematics Report Template - HD Standard
+%=========================================================
+\documentclass[11pt,a4paper]{article}
+
+%---------------- Packages ----------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{geometry}
+\usepackage{multicol}
+\geometry{a4paper, margin=2.5cm}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usetikzlibrary{angles,quotes} % for angle marks
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usetikzlibrary{arrows.meta, positioning}
+\usepackage{float}
+\usepackage{setspace}
+\usepackage[skip=0.6\baselineskip, indent=0pt]{parskip} % no paragraph indent, vertical gap instead
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+% optional: make comments right-aligned with a pointer
+\algrenewcommand\algorithmiccomment[1]{\hfill$\triangleright$~#1}
+
+\usepackage{amsmath, amssymb, amsthm, mathtools} % math environments
+\usepackage{mathrsfs}
+\usepackage{bm}             % bold math symbols
+\usepackage{physics}        % derivatives, bra-ket, etc.
+\usepackage{enumitem}       % custom lists
+\usepackage{tikz}           % diagrams
+\usepackage{pgfplots}       % plots
+\pgfplotsset{compat=1.18}
+\usepackage{graphicx}       % figures
+\usepackage{subcaption}     % subfigures
+\usepackage{xcolor}         % colors
+\usepackage{hyperref}       % hyperlinks
+\hypersetup{colorlinks=true, linkcolor=black, citecolor=blue, urlcolor=blue}
+
+%---------------- Theorem Environments ----------------
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+%---------------- Title Page ----------------
+\title{\textbf{Mini Project \\ Sydney Housing Price Prediction and Decision Support System}\\[6pt]
+       \large {SIT307 -- Machine Learning}}
+\author{Student Name: Bao Minh Tran \\
+ Student ID: s224236373 \\
+  Deakin University}
+\date{August $26^{th}$, 2026}
+
+%=========================================================
+\begin{document}
+
+%=========================================================
+% Cover Page
+%=========================================================
+\input{sections/cover_page.tex}
+
+\begin{abstract}
+    \noindent
+    say
+\end{abstract}
+
+\setcounter{tocdepth}{2}
+\tableofcontents
+\newpage
+
+%=========================================================
+\section{Problem Definition and Data Collection}
+\input{sections/part_1.tex}
+%=========================================================
+
+
+
+%=========================================================
+\newpage
+\section{Data Understanding and Feature Engineering}
+\input{sections/part_2.tex}
+%=========================================================
+
+
+%=========================================================
+\newpage
+\section{Model Development and Evaluation}
+\input{sections/part_3.tex}
+%=========================================================
+
+
+%=========================================================
+% \newpage
+\section{Investigating Prediction Failures}
+\input{sections/part_4.tex}
+%=========================================================
+
+
+%=========================================================
+% \newpage
+\section{Final Deployment and Reflection}
+\input{sections/part_5.tex}
+%=========================================================
+
+
+\newpage
+\bibliographystyle{ieeetr} % or another style like plain, apa, etc.
+\bibliography{literature}
+\nocite{*}
+
+\end{document}
