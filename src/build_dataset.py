@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Build the consolidated Sydney housing dataset (SIT307 Distinction, Part 1).
+Build the consolidated Sydney housing dataset.
 
 Inputs  : data/raw/index_<suburb>_p<N>.txt   (Domain sold-listings index pages)
           data/raw/detail_batch<NN>.txt      (Domain individual listing pages)
