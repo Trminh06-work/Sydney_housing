@@ -34,29 +34,32 @@ warnings fire on the cases Section~4 identified as unreliable.}
 
 \subsection{Reflection}
 
-\textbf{Data collection was the binding constraint, not modelling.} 188 of 239 listings
-survived the completeness rule, and every later limitation traces to that number. The
-learning curves never flattened, so more sales beat a better estimator. Which rows to
-drop was itself a modelling decision: exempting \texttt{area\_sqm} from the completeness
-rule preserved the suburb balance, at the cost of imputing it for a third of the sample.
+\textbf{Data collection was the real bottleneck, not modelling.} Only 188 of the 239
+listings passed the completeness rule, and almost every later limitation comes back to
+that number. The learning curves were still improving at the end, so more sales would
+have helped more than a better estimator. Choosing which rows to drop also turned out to
+be a modelling decision. Exempting \texttt{area\_sqm} kept the suburbs balanced, but
+it meant imputing that column for a third of the sample.
 
-\textbf{Evaluation choices changed conclusions.} Scoring in-sample rather than
-out-of-fold swapped the top two models; MAPE on the logged target read 1.17\% instead of
-16.8\%. Neither raises an error, and both would have been reported as findings.
+\textbf{Evaluation choices changed the conclusions.} When we scored in-sample instead of
+out-of-fold, the top two models swapped places. Likewise, MAPE computed on the logged
+target read 1.17\% rather than the actual 16.8\%.
 
-\textbf{Accuracy against deployability.} The most direct signals were hardest to serve.
-\texttt{area\_sqm} is a third missing, so the application must accept a blank and fall
-back on the training median, and the \texttt{kw\_*} flags proved near-null. The
-deployed model asks only for fields readable off a listing in seconds, accepting
-$\pm 25\%$ error for an interface needing no preparation.
+\textbf{Accuracy versus deployability.} Noticeably, the most useful signals were also the
+hardest to serve. Since \texttt{area\_sqm} is a third missing, the application has to
+accept a blank and fall back on the training median, while the \texttt{kw\_*} flags
+added almost nothing. Therefore, the deployed model only asks for fields that can be read
+off a listing in seconds, and we accept about $\pm 20\%$ error in exchange for an
+interface that needs no preparation.
 
-\textbf{Bias and fairness.} Three suburbs are not Sydney, and coverage within them is
-uneven, at 79 Blacktown sales against 47 Mosman, with error following at 11.7\% against
-20.9\%. Since suburb is an explicit input and SEIFA proved to be suburb
-restated, the model encodes existing spatial inequality and would reproduce it in any
-decision it informed.
+\textbf{Bias and fairness.} Three suburbs do not represent Sydney, and even within them
+coverage is uneven, with 79 Blacktown sales against 47 in Mosman. The error follows the
+same pattern, at 11.7\% against 20.9\%. Moreover, suburb is an explicit input and SEIFA
+turned out to be the suburb label restated, so the model encodes existing spatial
+inequality and would carry it into any decision it informs.
 
-\textbf{Given more resources.} A longer window would separate seasonality from trend and
-fill the sparse Mosman tail; capturing \texttt{area\_sqm} at collection would remove the
-need to impute a third of it; nested cross-validation would remove the optimism left in
-the CV figures.
+\textbf{Given more resources.} First, a longer collection window would separate
+seasonality from trend and fill in the sparse Mosman tail. Second, capturing
+\texttt{area\_sqm} at collection time would remove the need to impute it. Finally,
+nested cross-validation would remove the optimism still left in the CV figures.
+
