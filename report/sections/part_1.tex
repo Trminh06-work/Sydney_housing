@@ -45,7 +45,7 @@ Having removed the incomplete rows, \texttt{area\_sqm} is the only single source
 alone was exempted. Its remaining 64 gaps (34\%) are imputed inside the modelling pipeline.
 Admittedly, three of those six columns are not model inputs, and it cost 27 Mosman sales, contributing to the sparse Mosman tail in the price distribution. Cross-validating
 all three models on both the full and filtered sets confirms it is nonetheless the better choice, rather than keeping the missing values and imputing them
-in the modelling pipeline (notebook, \emph{Keeping versus dropping incomplete rows}).
+in the modelling pipeline (see \texttt{lab.ipynb}, \emph{Keeping versus dropping incomplete rows}).
 
 Noticeably, there are three apparent limitations. First, sales span only March--August 2026 with uneven coverage, so
 the temporal term cannot be extrapolated. Second, \texttt{area\_sqm} remains $34\%$ missing, so that column depends on imputation.

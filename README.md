@@ -9,11 +9,10 @@ Predicts residential sale price from observable listing characteristics for thre
 |---|---|
 | `data/sydney_housing.csv` | Collected dataset, **239 sold properties × 39 columns** |
 | `data/raw_cache.tar.gz` | The 31 raw pages the dataset was built from |
-| `data/collection_log.json`, `audit_crosscheck.json` | Collection provenance and integrity check |
+| `data/collection_log.json` | Collection provenance |
 | `data/data_dictionary.md` | Column definitions |
 | `notebooks/lab.ipynb` | The analysis: filtering, EDA, modelling, failure analysis, deployment |
 | `src/build_dataset.py` | Rebuilds `sydney_housing.csv` from the raw pages |
-| `src/audit_crosscheck.py` | Cross-checks index pages against listing pages |
 | `src/app.py` | Streamlit application |
 | `src/model.joblib` | Trained pipeline, written by the notebook |
 | `report/` | LaTeX sources and compiled PDF |

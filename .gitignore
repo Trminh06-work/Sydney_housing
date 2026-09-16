@@ -19,8 +19,7 @@ report/*.out
 report/*.synctex.gz
 report/*.toc
 
-# --- Stale figures from an earlier 219-row pipeline; kept on disk,
-#     excluded from the repo because their numbers contradict the report.
+
 report/figures/p1_missingness.png
 report/figures/p3_importance.png
 report/figures/p3_model_compare.png
@@ -28,5 +27,3 @@ report/figures/p4_pred_vs_actual.png
 
 # --- Figures produced but not referenced by any section ---
 report/figures/p3_fit_gap.png
-
-# Note: report/Report.pdf and src/model.joblib are deliverables and stay tracked.

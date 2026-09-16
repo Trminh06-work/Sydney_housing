@@ -41,10 +41,8 @@ drop was itself a modelling decision: exempting \texttt{area\_sqm} from the comp
 rule preserved the suburb balance, at the cost of imputing it for a third of the sample.
 
 \textbf{Evaluation choices changed conclusions.} Scoring in-sample rather than
-out-of-fold reversed the ranking; MAPE on the logged target read 1.15\% instead of
-16.4\%. Neither raises an error, and both would have been reported as findings. The
-target transform also mattered more than the algorithm, since logging moved Ridge from
-last to first.
+out-of-fold swapped the top two models; MAPE on the logged target read 1.17\% instead of
+16.8\%. Neither raises an error, and both would have been reported as findings.
 
 \textbf{Accuracy against deployability.} The most direct signals were hardest to serve.
 \texttt{area\_sqm} is a third missing, so the application must accept a blank and fall
@@ -54,7 +52,7 @@ $\pm 25\%$ error for an interface needing no preparation.
 
 \textbf{Bias and fairness.} Three suburbs are not Sydney, and coverage within them is
 uneven, at 79 Blacktown sales against 47 Mosman, with error following at 11.7\% against
-25.6\% in Chatswood. Since suburb is an explicit input and SEIFA proved to be suburb
+20.9\%. Since suburb is an explicit input and SEIFA proved to be suburb
 restated, the model encodes existing spatial inequality and would reproduce it in any
 decision it informed.
 
